@@ -1,5 +1,6 @@
 import Gallery from "./components/Gallery";
 import Pitch from "./components/Pitch";
+import Plans from "./components/Plans";
 import PrimaryNavigation from "./components/PrimaryNavigation";
 import Testimonials from "./components/Tesimonials";
 import "./style.scss";
@@ -11,6 +12,7 @@ function App() {
       <Gallery/>
       <Pitch/>
       <Testimonials/>
+      <Plans/>
     </>
   );
 }
