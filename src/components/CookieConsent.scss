@@ -10,6 +10,7 @@
     z-index: 1000;
     backdrop-filter: blur(2px);
     display: grid;
+    scroll-behavior: contain;
 }
 
 .cookieConsentModal {

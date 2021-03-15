@@ -1,7 +1,15 @@
+import { useEffect } from "react";
 import "./CookieConsent.scss";
 
 
 function CookieConsent () {
+    useEffect(function(){
+        document.body.className = "modal--open"
+    }, [])
+
+    function allowAll() {
+        
+    }
     return(
         <div className="overlay">
             <section className="cookieConsentModal">
@@ -34,7 +42,7 @@ function CookieConsent () {
                     </table>
                     <div className="content__buttons">
                         <button className="buttons__button">Tillad Valgte</button>
-                        <button className="buttons__button buttons__button--highlight">Tillad alle</button>
+                        <button className="buttons__button buttons__button--highlight" onClick={() => allowAll}>Tillad alle</button>
                     </div>
                 </article>
             </section>
