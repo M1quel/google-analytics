@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import setCookies from "../helpers/setCookies";
 import "./CookieConsent.scss";
 
 
@@ -8,8 +9,18 @@ function CookieConsent () {
     }, [])
 
     function allowAll() {
-        
+        var now = Date.now();
+        var expires = new Date(now + 60000).toUTCString();
+        var payload = {
+            acceptnecessary:true,
+            acceptanalytics:true
+        }
+        setCookies(payload)
+        document.cookie = `landingpagedemo=${JSON.stringify(payload)}; expires=${expires}; path=/`;
+        document.body.className = "";
     }
+
+
     return(
         <div className="overlay">
             <section className="cookieConsentModal">
@@ -42,7 +53,7 @@ function CookieConsent () {
                     </table>
                     <div className="content__buttons">
                         <button className="buttons__button">Tillad Valgte</button>
-                        <button className="buttons__button buttons__button--highlight" onClick={() => allowAll}>Tillad alle</button>
+                        <button className="buttons__button buttons__button--highlight" onClick={() => allowAll()}>Tillad alle</button>
                     </div>
                 </article>
             </section>
