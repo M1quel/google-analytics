@@ -15,14 +15,14 @@ function App() {
     setHasCookie(cookie.includes("landingpagedemo"));
   
     if(hasCookie) {
-      var cookieArray = cookie.get("landingpagedemo").split("; ");
+      var cookieArray = cookie.split("; ");
       var config = cookieArray.filter(string => string.includes("acceptnecessary"));
 
       config = new URLSearchParams(config[0]).get("landingpagedemo")
       setCookies(JSON.parse(config));
       document.body.className = "";
     }
-  }, [setHasCookie, hasCookie])
+  }, [hasCookie, setHasCookie])
   return (
     <>
       <PrimaryNavigation/>
