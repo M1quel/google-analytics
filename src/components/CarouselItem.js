@@ -6,7 +6,8 @@ function CarouselItem ({ image, copy, ctaLink, ctaCopy }) {
             <img src={image} alt="" className="carouselItem__image"/>
             <div className="carouselItem__content">
                 <p className="carouselItem__copy">{copy}</p>
-                <a href={ctaLink} className="carouselItem__CTA">{ctaCopy}</a>
+                {/* eslint-disable-next-line */}
+                <a onClick={gtag("event", "cta", ctaLink)} href={ctaLink} className="carouselItem__CTA">{ctaCopy}</a>
             </div>
         </div>
     )

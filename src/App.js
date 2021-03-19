@@ -11,15 +11,18 @@ import "./style.scss";
 function App() {
   var [hasCookie, setHasCookie] = useState(false);
   useEffect(function(){
-    var cookie = new URLSearchParams(document.cookie)
-    setHasCookie(cookie.has("landingpagedemo"));
+    var cookie = document.cookie
+    setHasCookie(cookie.includes("landingpagedemo"));
   
     if(hasCookie) {
       var cookieArray = cookie.get("landingpagedemo").split("; ");
-      var config = JSON.parse(cookieArray.filter(string => string.includes("acceptnecessary")));
-      setCookies(config)
+      var config = cookieArray.filter(string => string.includes("acceptnecessary"));
+
+      config = new URLSearchParams(config[0]).get("landingpagedemo")
+      setCookies(JSON.parse(config));
+      document.body.className = "";
     }
-  }, [setHasCookie])
+  }, [setHasCookie, hasCookie])
   return (
     <>
       <PrimaryNavigation/>

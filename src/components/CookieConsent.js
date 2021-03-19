@@ -18,6 +18,7 @@ function CookieConsent () {
         setCookies(payload)
         document.cookie = `landingpagedemo=${JSON.stringify(payload)}; expires=${expires}; path=/`;
         document.body.className = "";
+        document.querySelector(".overlay").style.display = "none"
     }
 
 
