@@ -7,11 +7,10 @@ function CarouselItem ({ image, copy, ctaLink, ctaCopy }) {
             <div className="carouselItem__content">
                 <p className="carouselItem__copy">{copy}</p>
                 {/* eslint-disable-next-line */}
-                <a onClick={() => gtag("event", "select_content", {"content-type": ctaLink})} href={ctaLink} className="carouselItem__CTA">{ctaCopy}</a>
+                <a href={ctaLink} className="carouselItem__CTA">{ctaCopy}</a>
             </div>
         </div>
     )
     
 }
-
 export default CarouselItem;

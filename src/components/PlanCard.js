@@ -17,7 +17,8 @@ function PlanCard ({ heading, summary, price, link, features, getfrom }) {
                     /user/month*
                     <br/>(billed annually) 
                 </p>
-                <a href={link} className="title__link">
+                <a href={link} className="title__link"
+                onClick={() => gtag("event", "select_content", {"content-type": heading})}>
                     Try for <span className="title__link--caps">free</span> &gt;
                 </a>
             </section>
